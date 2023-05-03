@@ -35,6 +35,9 @@ package by.itstep.javatraining.revision.task;
  *
  *	[ input 6]: 1 1 -1
  *	[output 6]: Error.
+ *
+ *	[ input 7]: 1 1 1
+ *	[output 7]: 02.01.0001
  */
 
 public class Task08 {
