@@ -26,8 +26,24 @@ package by.itstep.javatraining.revision.task;
  *	[output 4]: 0
  */
 
+import java.util.Arrays;
+
 public class Task05 {
     public static int task05(int a, int b, int c) {
-        return 0;
+        if (a == b || b == c || a == c) {
+            return 0;
+        }
+        // second variable
+//         int [] array = {a , b, c};
+//        Arrays.sort(array);
+//        return array[1];
+        int average = c;
+        if ((a > b && a < c) || (a > c && a < b)) {
+            average = a;
+        }
+        if ((b < c && b > a) || (b > c && a > b)) {
+            average = b;
+        }
+        return average;
     }
 }

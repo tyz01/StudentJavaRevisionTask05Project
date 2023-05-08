@@ -42,6 +42,20 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static String task07(String color1, String color2) {
-        return "?";
+        if((!"red".equals(color1) && !"yellow".equals(color1) && !"blue".equals(color1))
+                || !"red".equals(color2) && !"yellow".equals(color2) && !"blue".equals(color2)){
+            return "error";
+        }
+        String color = "green";
+        if(color1.equals(color2)){
+            color = color1;
+        }
+        if(color1.equals("red") && color2.equals("blue") || color1.equals("blue") && color2.equals("red")){
+            return "violet";
+        }
+        if(color1.equals("red") && color2.equals("yellow") || color1.equals("yellow") && color2.equals("red")){
+            return "orange";
+        }
+        return color;
     }
 }

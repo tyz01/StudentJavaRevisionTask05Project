@@ -26,6 +26,45 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int task01(int a, int b, int c, int d) {
-        return 0;
+        int repeatNumber = 0;
+
+        if (a == b || b == c || c == d || d == a || b == d) {
+            repeatNumber = 2;
+        }
+        if ((a == b && b == c) || (a == c && c == d) || (b == c && c == d) || (b == d && d == a)) {
+            repeatNumber = 3;
+        }
+        if (a == b && b == c && c == d) {
+            repeatNumber = 4;
+        }
+        // second variable
+//        if (a == b) {
+//            repeatNumber++;
+//        }
+//
+//        if (a == c) {
+//            repeatNumber++;
+//        }
+//        if (a == d) {
+//            repeatNumber++;
+//        }
+//
+//        if (b == c) {
+//            repeatNumber++;
+//        }
+//
+//        if (b == d) {
+//            repeatNumber++;
+//        }
+//        if (c == d) {
+//            repeatNumber++;
+//        }
+//        if (repeatNumber > 4) {
+//            repeatNumber = 4;
+//        }
+//        if(repeatNumber == 1){
+//            repeatNumber = 2;
+//        }
+        return repeatNumber;
     }
 }

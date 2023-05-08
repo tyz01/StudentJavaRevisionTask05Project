@@ -40,6 +40,23 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static String task06(int number) {
-        return "?";
+        if (number < 0 || number > 36) {
+            return "error";
+        }
+        String color = "red";
+
+        boolean noEvenNumber = number % 2 != 0;
+        boolean evenNumber = number % 2 == 0;
+
+        if (number == 0) {
+            color = "green";
+        }
+
+        if (((number > 0 && number < 11 || number > 18 && number < 29) && evenNumber)
+                || (number > 10 && number < 19 || number > 28 && number < 36) && noEvenNumber) {
+            color = "black";
+        }
+
+        return color;
     }
 }

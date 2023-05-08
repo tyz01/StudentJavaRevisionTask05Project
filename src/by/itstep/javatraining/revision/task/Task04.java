@@ -39,6 +39,20 @@ package by.itstep.javatraining.revision.task;
 
 public class Task04 {
     public static int task04(int month, int year) {
-        return 0;
+        boolean februry29 = (month == 2 && year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+        boolean days30 = month == 4 || month == 6 || month == 9 || month == 11;
+        if (month > 12 || month <= 0) {
+            return 0;
+        }
+        int days = 31;
+        if (februry29) {
+            days = 29;
+        } else if (days30) {
+            days = 30;
+        }
+        if ((!februry29 || days30) && month == 2) {
+            days = 28;
+        }
+        return days;
     }
 }
