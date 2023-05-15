@@ -50,7 +50,7 @@ public class Task04 {
         } else if (days30) {
             days = 30;
         }
-        if ((!februry29 || days30) && month == 2) {
+        if (!februry29 && month == 2) {
             days = 28;
         }
         return days;

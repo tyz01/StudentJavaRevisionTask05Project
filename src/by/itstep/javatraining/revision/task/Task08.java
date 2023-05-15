@@ -44,18 +44,19 @@ public class Task08 {
     public static String task08(int day, int month, int year) {
         boolean februry29 = (month == 2 && year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
         boolean days30 = month == 4 || month == 6 || month == 9 || month == 11;
-        if ((days30 && day == 31) || day < 1 || day > 31 || month < 1 || month > 12 || year < 0 ||
+
+        if ( day < 1 || day > 31 || month < 1 || month > 12 || year < 0 || (days30 && day == 31) ||
                 (month == 2 && day > 29) || (month == 2 && !februry29 && day == 29)) {
             return "Error.";
         }
-        if ((februry29 && day == 29) || (!februry29 && day == 28) && month != 12) {
+        if ((februry29 && day == 29) || (!februry29 && day == 28)) {
             month += 1;
             day = 1;
         }
         if (day != 1 && februry29 && day <= 28) {
             day += 1;
         }
-        if ((days30 && day == 30) || (!days30 && day == 31) && month != 12 ) {
+        if ((days30 && day == 30) || (!days30 && day == 31) && month != 12) {
             month += 1;
             day = 1;
         }
@@ -64,7 +65,7 @@ public class Task08 {
             day = 1;
             month = 1;
         }
-        if (month != 2 && (!days30 && day != 1) || (days30 && day != 1)) {
+        if (month != 2 && day != 1) {
             day += 1;
         }
         return String.format("%02d", day) + "."
